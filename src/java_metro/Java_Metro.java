@@ -33,8 +33,8 @@ public class Java_Metro {
         int departTime[];
         int deliverTime;
         Calendar startDate;
-        show_text("Программа МЕТРО\nВыберите город");
-        show_text("1 - Днепропетровск;\n2 - Киев;\n3 - Харьков;");
+        //show_text("Программа МЕТРО\nВыберите город");
+        //show_text("1 - Днепропетровск;\n2 - Киев;\n3 - Харьков;");
         //choose = ask(3);
         if (choose == 1)
         {
