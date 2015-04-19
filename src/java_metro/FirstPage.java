@@ -17,7 +17,6 @@ import static java_metro.LoginWindow.*;
 public class FirstPage extends javax.swing.JFrame{
 private final static JFrame frame = new JFrame("Метро");
     public FirstPage() {
-        //JFrame frame = new JFrame("Метро");
         frame.setSize(300, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
