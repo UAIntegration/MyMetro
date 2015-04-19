@@ -143,6 +143,9 @@ private final static JFrame frame = new JFrame("Метро");
     private static void hidemain(){
         frame.setVisible(false);
     }
+    public static void showmain(){
+        frame.setVisible(true);
+    }
     private static class Action_dnepr implements ActionListener {        
         public void actionPerformed (ActionEvent e) {
             hidemain();

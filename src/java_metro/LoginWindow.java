@@ -1,12 +1,16 @@
 package java_metro;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import static java_metro.FirstPage.menuBar;
+import static java_metro.FirstPage.*;
 
 public class LoginWindow extends JFrame {
  
-/* Для того, чтобы впоследствии обращаться к содержимому текстовых полей, рекомендуется сделать их членами класса окна */
+/* Для того, чтобы впоследствии обращаться к содержимому текстовых полей, 
+    рекомендуется сделать их членами класса окна */
     final private JTextField loginField;
     final private JPasswordField passwordField;
     final private static JFrame frame = new JFrame("Вход в систему");;
@@ -30,6 +34,7 @@ public class LoginWindow extends JFrame {
         Box box3 = Box.createHorizontalBox();
         JButton ok = new JButton("OK");
         JButton cancel = new JButton("Отмена");
+        cancel.addActionListener (new Action_cancel());
         box3.add(Box.createHorizontalGlue());
         box3.add(ok);
         box3.add(Box.createHorizontalStrut(12));
@@ -54,5 +59,11 @@ public class LoginWindow extends JFrame {
     }
     public static void hide_loginwindow(){
         frame.setVisible(false);
+    }
+    private static class Action_cancel implements ActionListener {        
+        public void actionPerformed (ActionEvent e) {
+            hide_loginwindow();
+            showmain();
+        }
     }
 }
