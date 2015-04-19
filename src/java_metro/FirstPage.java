@@ -3,8 +3,6 @@ package java_metro;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
 import static java_metro.Page_Dnepr.*;
 import static java_metro.Page_Kyiv.*;
@@ -28,7 +26,7 @@ private final static JFrame frame = new JFrame("Метро");
         frame.setVisible(true);
     }
     
-    public static void main(String args[]) {
+    /*public static void main(String args[]) {
         System.out.println("code run");
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -42,7 +40,7 @@ private final static JFrame frame = new JFrame("Метро");
                 }
             }
         });
-    }
+    }*/
     
     public static JMenuBar menuBar(Boolean ishide, Boolean isBack) {
         JMenuBar menuBar = new JMenuBar();
