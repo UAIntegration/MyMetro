@@ -7,7 +7,6 @@ import java.awt.*;
 import javax.swing.*;
 import static java_metro.FirstPage.*;
 import static java_metro.methods1.*;
-import static java_metro.Info_msg.*;
 import de.wannawork.jcalendar.*;
 import java.awt.event.*;
 import java.sql.SQLException;
@@ -81,7 +80,7 @@ public class Page_Dnepr extends javax.swing.JFrame{
             int dir1 = cbox.getSelectCombo1();
             int dir2 = cbox.getSelectCombo2();
             if (dir1 == dir2){
-                MSG_TEXT("Станция прибытия должна отличаться от станции отправления!");
+                JOptionPane.showMessageDialog(null, "Станция прибытия должна отличаться от станции отправления!", "Внимание", JOptionPane.WARNING_MESSAGE);
             }else{
                 if(checkcorrecttime(Time.getUserTime())){
                     cal.set(Calendar.HOUR_OF_DAY, Integer.parseInt(Time.getUserTime().substring(0, Time.getUserTime().indexOf(':'))));
@@ -103,7 +102,7 @@ public class Page_Dnepr extends javax.swing.JFrame{
                     }
                     departime.setAllTime((deliverTime - departTime[0])/60);
                 }else {
-                    MSG_TEXT("Время должно быть указано в корректном формате (ЧЧ:ММ)!");
+                    JOptionPane.showMessageDialog(null, "Время должно быть указано в корректном формате (ЧЧ:ММ)!", "Внимание", JOptionPane.WARNING_MESSAGE);
                 }
             }
         }

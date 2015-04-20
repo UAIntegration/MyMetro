@@ -3,6 +3,7 @@ package java_metro;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import javax.swing.*;
 import static java_metro.Page_Dnepr.*;
 import static java_metro.Page_Kyiv.*;
@@ -46,7 +47,8 @@ private final static JFrame frame = new JFrame("Метро");
         JMenuBar menuBar = new JMenuBar();
         
         Font font = new Font("Verdana", Font.PLAIN, 11);
-        JMenu fileMenu = new JMenu("Меню");
+        JMenu fileMenu = new JMenu("Mеню");
+        fileMenu.setMnemonic(KeyEvent.VK_M);
         fileMenu.setFont(font);
         
         if(isBack) {
@@ -70,6 +72,8 @@ private final static JFrame frame = new JFrame("Метро");
         
         JMenuItem newMenu = new JMenuItem("Авторизация");
         newMenu.setFont(font);
+        newMenu.setAccelerator(KeyStroke.getKeyStroke(
+        KeyEvent.VK_A, ActionEvent.ALT_MASK));
         newMenu.addActionListener (new Login_window());
         fileMenu.add(newMenu);
         
@@ -98,12 +102,17 @@ private final static JFrame frame = new JFrame("Метро");
         
         JMenuItem ExitMenu = new JMenuItem("Выход");
         ExitMenu.setFont(font);
+        ExitMenu.setAccelerator(KeyStroke.getKeyStroke(
+        KeyEvent.VK_X, ActionEvent.ALT_MASK));
         fileMenu.add(ExitMenu);
          
         ExitMenu.addActionListener(new ActionListener() {      
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                int response = JOptionPane.showConfirmDialog(null,
+            "Вы действительно желаете выйти?", "Выход",
+            JOptionPane.OK_CANCEL_OPTION);
+                if(response == JOptionPane.OK_OPTION) System.exit(0);
             }
         });
         
