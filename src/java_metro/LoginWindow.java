@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import static java_metro.FirstPage.menuBar;
-import static java_metro.FirstPage.*;
+import static java_metro.FirstPage.showmain;
 
 public class LoginWindow extends JFrame {
  
