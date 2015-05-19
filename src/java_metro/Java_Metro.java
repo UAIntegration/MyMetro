@@ -14,7 +14,8 @@ import java.util.logging.Logger;
 public class Java_Metro {
 
     public static void main(String[] args) throws Exception {
-        java.awt.EventQueue.invokeLater(() -> {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
             try {
                 FirstPage firstPage = new FirstPage();
                 Page_Dnepr page_Dnepr = new Page_Dnepr();
@@ -27,6 +28,7 @@ public class Java_Metro {
             } catch (Exception ex) {
                 Logger.getLogger(Java_Metro.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
         });
         int choose = 0;
         int dir1 = 0, dir2 = 0;
